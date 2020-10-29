@@ -1,0 +1,22 @@
+<div *ngIf="isSelection" class="selection">
+    <nav>
+        <a (click)="markSelection('new')"><button class="nav-btn">New Game</button></a>
+        <a (click)="markSelection('exist')"><button class="nav-btn">Existing Game</button></a>
+        <a routerLink="/"><button class="nav-btn">Home</button></a>
+    </nav>
+    <div *ngIf="!showExist && isChooseGame">
+        <P>No game found. Please start new game</P>
+    </div>
+    <div *ngIf="showExist" class="exist-game">
+        <h3>Select game id</h3>
+        <ul class="no-style">
+            <li *ngFor="let id of gameIds" class="id-list" (click)="enterToTheGame(id)">{{ id }}</li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="!isSelection" class="single">
+    <div class="selection-criteria">
+        <h3>Multi Player</h3>
+    </div>
+    <app-board playerType="multi" [(gameType)]="gameType" [(gameId)]="selectedGameId"></app-board>
+</div>

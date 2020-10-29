@@ -1,0 +1,23 @@
+<div class="">
+    <div class="board" *ngFor="let row of board; let rowIndex = index">
+        <div *ngFor="let column of row; let columnIndex = index" class="cell" (click)="set(rowIndex, columnIndex)" [style.background]="isWinnerCell(rowIndex, columnIndex) ? 'green' : 'white'">
+            {{ column }}
+        </div>
+    </div>
+</div>
+<div class="restart">
+    <nav>
+        <a routerLink="/"><button class="nav-btn">Home</button></a>
+        <a (click)="restartGame()"><button class="nav-btn">Restart</button></a>
+    </nav>
+</div>
+<div class="modal" *ngIf="gameResult !== ''">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <p>{{ gameResult }}</p>
+        <nav>
+            <a routerLink="/"><button class="nav-btn">Home</button></a>
+            <a (click)="restartGame()"><button class="nav-btn">Restart</button></a>
+        </nav>
+    </div>
+</div>
