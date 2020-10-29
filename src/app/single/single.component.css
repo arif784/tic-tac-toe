@@ -1,0 +1,26 @@
+.selection-criteria,
+.selection {
+    text-align: center;
+}
+
+.nav-btn {
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.id-list {
+    padding: 5px;
+    border: 1px solid black;
+    background-color: #dbd9d961;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.id-list:hover {
+    background-color: gray;
+}
+
+.no-style {
+    list-style: none;
+}
